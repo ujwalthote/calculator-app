@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         add = (Button) findViewById(R.id.add);
@@ -28,7 +30,11 @@ public class MainActivity extends AppCompatActivity {
         value2 = (EditText) findViewById(R.id.editText2);
         value1.setText("");
         value2.setText("");
-
+        findViewById(R.id.mainLayout).setBackgroundColor(Color.WHITE);
+        add.setBackgroundColor(Color.rgb(239,240,241));
+        sub.setBackgroundColor(Color.rgb(239,240,241));
+        mul.setBackgroundColor(Color.rgb(239,240,241));
+        div.setBackgroundColor(Color.rgb(239,240,241));
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,7 +49,12 @@ public class MainActivity extends AppCompatActivity {
                     double number1 = Double.parseDouble(value1.getText().toString());
                     double number2 = Double.parseDouble(value2.getText().toString());
                     double number3 = number1 + number2;
+                    answer.setTextColor(Color.BLACK);
                     answer.setText(String.valueOf(number3));
+                    add.setBackgroundColor(Color.MAGENTA);
+                    sub.setBackgroundColor(Color.rgb(239,240,241));
+                    mul.setBackgroundColor(Color.rgb(239,240,241));
+                    div.setBackgroundColor(Color.rgb(239,240,241));
                 }
             }
         });
@@ -63,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
                     double number2 = Double.parseDouble(value2.getText().toString());
                     double number3 = number1 - number2;
                     answer.setText(String.valueOf(number3));
+                    answer.setTextColor(Color.BLACK);
+                    add.setBackgroundColor(Color.rgb(239,240,241));
+                    sub.setBackgroundColor(Color.MAGENTA);
+                    mul.setBackgroundColor(Color.rgb(239,240,241));
+                    div.setBackgroundColor(Color.rgb(239,240,241));
                 }
             }
         });
@@ -82,6 +98,11 @@ public class MainActivity extends AppCompatActivity {
                     double number2 = Double.parseDouble(value2.getText().toString());
                     double number3 = number1 * number2;
                     answer.setText(String.valueOf(number3));
+                    answer.setTextColor(Color.BLACK);
+                    add.setBackgroundColor(Color.rgb(239,240,241));
+                    sub.setBackgroundColor(Color.rgb(239,240,241));
+                    mul.setBackgroundColor(Color.MAGENTA);
+                    div.setBackgroundColor(Color.rgb(239,240,241));
                 }
 
             }
@@ -104,6 +125,11 @@ public class MainActivity extends AppCompatActivity {
                         double number2 = Double.parseDouble(value2.getText().toString());
                         number3 = number1 / number2;
                         answer.setText(String.valueOf(number3));
+                        answer.setTextColor(Color.BLACK);
+                        add.setBackgroundColor(Color.rgb(239,240,241));
+                        sub.setBackgroundColor(Color.rgb(239,240,241));
+                        mul.setBackgroundColor(Color.rgb(239,240,241));
+                        div.setBackgroundColor(Color.MAGENTA);
                     } catch (ArithmeticException e) {
                         e.printStackTrace();
                         answer.setTextColor(Color.RED);

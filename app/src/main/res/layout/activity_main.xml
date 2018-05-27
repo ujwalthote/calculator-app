@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:paddingVertical="30dp">
 
         <ImageView
@@ -23,30 +23,37 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="25dp"
             android:text="Calculator" />
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/editText"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="@string/value_1"
-        android:inputType="numberDecimal"
+        android:orientation="vertical"
+        android:paddingTop="100dp">
 
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
-        tools:layout_editor_absoluteX="84dp" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="@string/value_1"
+            android:inputType="numberDecimal"
+            app:layout_constraintBottom_toTopOf="@+id/editText2"
+            tools:layout_editor_absoluteX="84dp" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/value_2"
-        android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="121dp" />
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/value_2"
+            android:inputType="numberDecimal"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="121dp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -57,33 +64,34 @@
             android:id="@+id/div"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="/"
-            tools:layout_editor_absoluteX="280dp"
-            tools:layout_editor_absoluteY="192dp" />
+            android:background="@android:color/holo_blue_light"
+            android:text="/" />
 
         <Button
             android:id="@+id/mul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="*"
-            tools:layout_editor_absoluteX="193dp"
-            tools:layout_editor_absoluteY="192dp" />
+            android:background="@android:color/holo_blue_light"
+
+            />
 
         <Button
             android:id="@+id/sub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
-            tools:layout_editor_absoluteX="104dp"
-            tools:layout_editor_absoluteY="192dp" />
+            android:background="@android:color/holo_blue_light"
+
+            />
 
         <Button
             android:id="@+id/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="192dp" />
+            android:background="@android:color/holo_blue_light"
+            />
 
     </LinearLayout>
 
